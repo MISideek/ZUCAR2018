@@ -25,8 +25,8 @@
      *  \return of Type Num the current diffrential.
      *  \author Sherif Abaza.
      */
-    template <typename Num , typename Degree> Num dS(const Num& u1 , const Num& dc , const Degree& theta_e , const Degree& phie , const Num& lnth , const Num& l1 , const Num& l2){
-        return ( u1/(1-dc) * (std::cos(theta_e) - (std::tan(phie)/lnth)*(l2*std::cos(theta_e) + l1*std::sin(theta_e))));
+    template <typename Num , typename Degree> Num dS(const Num& u1 , const Num& k ,const Num& d  , const Degree& theta_e){
+        return ( u1/(1-d*k) * (std::cos(theta_e)));
     }
 
     /*! \brief this function is used to calculate differntial of d .
@@ -58,6 +58,10 @@
     {
         return ( (u1/lnth) * std::tan(phie) ) - sdot*c;
     }
+
+
+
+
 
     /*! \brief used to calclate dPhie
      *  \details the Template function uses the formula \b φ˙ = u2.

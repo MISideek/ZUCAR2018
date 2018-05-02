@@ -2,7 +2,6 @@
 #include "PathGen.h"
 
 
-
 path::path(){} ;
 path::~path(){} ;
 

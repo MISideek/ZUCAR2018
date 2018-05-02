@@ -2,11 +2,11 @@
 #define CARKINEMATICS_H
 #include <cmath>
 
-namespace Path{
+namespace traj{
 namespace RControl {
     template<typename Num> Num  calcZ1(const Num&  s) ;
     template<typename Num> Num  calcZ2(const Num&  d) ;
-    template<typename Num> Num  calcZ3(const Num&  d , const Num&  s , const Num&  thetaE  ) ;
+    template<typename Num> Num  calcZ3(const Num&  d , const Num&  s , const Num&  thetaE , const  Num& curvature ) ;
     template<typename Num> Num  calcZ4(const Num&  d , const Num&  s , const Num&  thetaE  , const Num&  phi   , const Num& L , const Num& curvature , const Num& curvatureDF  ) ;
     template<typename Num> Num  controlSignal_V2(const Num&  v1  ,const  Num& k2,const  Num& k3,const Num& K4,const  Num& z2,const  Num& z3,const  Num& z4);
     template<typename Num> Num  calcV1(const Num& u1 , const Num& curvature , const Num& d , const Num& thetaE );
@@ -21,7 +21,7 @@ template<typename Num> Num calcZ2(const Num&  d) {
     }
 template<typename Num> Num calcZ3(const Num&  d , const Num&  s , const Num&  thetaE , const  Num& curvature )
     {
-        return  (1-d*curvature)*std::tan(thetaE*3.14/180.0) ;
+        return  (1-d*curvature)*std::tan(thetaE) ;
     }
 template<typename Num>Num  calcZ4(const Num&  d , const Num&  s , const Num&  thetaE  , const Num&  phi   , const Num& L , const Num& curvature , const Num& curvatureDF  )
     {

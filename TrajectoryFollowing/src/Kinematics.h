@@ -13,6 +13,10 @@
 class kinematics{
     const double PI = 22.0 / 7;
 public:
+    double angularVL;
+    double angularVR;
+    double u1, u2 ;
+    double theta , phie ;
     virtual double longVelocity() const;
     virtual double rotationalVelocity() const;
     virtual double dX() const;
@@ -43,10 +47,7 @@ public:
 
 private:
     CarDescription *carDesc;
-    double angularVL;
-    double angularVR;
-    double u1, u2 ;
-    double theta , phie ;
+
 protected:
 };
 
